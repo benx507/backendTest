@@ -3,7 +3,7 @@ const pool = db.pool
 
 const createEmail = (req,res) => {
     const {email} = req.body;
-    console.log(email)
+    console.log(req.body)
     const text = 'INSERT INTO "emails" (userEmail) VALUES($1) RETURNING *'
     const values = [email]
     pool.query(text, values, (error,results) => {
