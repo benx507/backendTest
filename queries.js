@@ -1,4 +1,4 @@
-const db = require('../../config/db.js')
+const db = require('./db.js')
 const pool = db.pool
 
 const createEmail = (req,res) => {
