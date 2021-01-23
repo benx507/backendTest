@@ -9,11 +9,11 @@ const createEmail = (req,res) => {
     pool.query(text, values, (error,results) => {
         
         if (error) {
-            res.status(400);
-            throw error
+            return res.status(404).send({errors: error})
         } else {
-            res.status(201).send('email logged')
+            res.status(201).send('email logged');
         }
+        return res;
     })
 }
 module.exports = { 
