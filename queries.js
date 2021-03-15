@@ -17,9 +17,12 @@ const createEmail = (req, res) => {
     pool.query(text, values, (error,results) => {
         if (validateEmail(email)) {
             if (error) {
-                return res.status(404).send({errors: error})
+                console.log("entered if")
+                res.status(404).send({errors: error})
             } else {
+                console.log("entered else")
                 res.status(201).send('email logged');
+                SendMail(req,res);
             }
             return res;
         }

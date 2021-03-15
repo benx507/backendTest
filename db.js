@@ -3,9 +3,10 @@ const Test = 'localhost'
 const Prod = 'polici-web.ctvjusy0w8gy.us-east-2.rds.amazonaws.com'
 const pool = new Pool({
     user: 'postgres',
-    host: Test,
+    host: Prod,
     database: 'postgres',
-    password: 'Cy911911!!',
+    //Note Test password is CY911911!!
+    password: 'Cy911911!',
     port: 5432,
   })
   

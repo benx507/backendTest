@@ -3,7 +3,7 @@ const prodPort = 8080
 const express = require('express')
 const bodyParser = require('body-parser')
 const app = express()
-const port = testPort
+const port = prodPort
 const query = require('./queries')
 var cors = require("cors");
 app.use(cors());
@@ -26,7 +26,7 @@ app.get("/", function(req, res, next) {
 app.post('/api/email/', (req,res) => {
     console.log("reached POST endpoint")
     query.createEmail(req,res);
-
-    
-    query.SendMail(req,res);
+    //console.log("finished endpoint")
+    //query.SendMail(req,res);
 })
+
